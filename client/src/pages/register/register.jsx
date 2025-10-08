@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 import "./register.css";
 
 const Register = () => {
@@ -20,6 +22,10 @@ const Register = () => {
 
   const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+  };
+
+  const handlePhoneChange = (value) => {
+    setCredentials((prev) => ({ ...prev, phone: `+${value}` }));
   };
 
   const handleClick = async (e) => {
@@ -64,7 +70,19 @@ const Register = () => {
 
         <div className="input-group">
           <label htmlFor="phone">Phone</label>
-          <input type="text" id="phone" placeholder="Enter phone number" onChange={handleChange} />
+          <PhoneInput
+            country={'za'}
+            value={credentials.phone.replace('+', '')}
+            onChange={handlePhoneChange}
+            inputProps={{
+              name: 'phone',
+              required: true,
+            }}
+            enableSearch
+            containerClass="phone-input-container"
+            inputClass="phone-input-field"
+            buttonClass="phone-input-button"
+          />
         </div>
 
         <button type="submit" className="register-button">Register</button>
