@@ -1,15 +1,22 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+}
+
 .login {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #f0f0f0;
+  padding: 1rem;
 }
 
 .lContainer {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1.5rem;
   padding: 2rem;
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
