@@ -17,6 +17,7 @@ const Register = () => {
     isAdmin: false,
   });
 
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -53,9 +54,24 @@ const Register = () => {
           <input type="email" id="email" placeholder="Enter email" onChange={handleChange} required />
         </div>
 
-        <div className="input-group">
+        <div className="input-group password-group">
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" placeholder="Enter password" onChange={handleChange} required />
+          <div className="password-wrapper">
+            <input
+              type={showPassword ? "text" : "password"}
+              id="password"
+              placeholder="Enter password"
+              onChange={handleChange}
+              required
+            />
+            <span
+              className="toggle-password"
+              onClick={() => setShowPassword((prev) => !prev)}
+              title={showPassword ? "Hide password" : "Show password"}
+            >
+              {showPassword ? "🙈" : "👁️"}
+            </span>
+          </div>
         </div>
 
         <div className="input-group">
