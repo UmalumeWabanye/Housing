@@ -5,13 +5,18 @@ import roomsRoute from './routes/rooms.js';
 import usersRoute from './routes/users.js';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import adminRoutes from './routes/adminRoutes.js';
 
 dotenv.config();
 
 const app = express();
-
+app.use(cors());
 //middleware to parse JSON requests
 app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('Connected to backend');
+});
 
 //Connect to MongoDB
 const connect = async () => {
@@ -32,6 +37,7 @@ app.use(cors()); //Enable cross-origin resource sharing
 app.use(cookieParser()); //Parse cookies from incoming requests
 
 //Route Setup
+app.use('/api/admin', adminRoutes);
 //app.use('/api/auth', authRoute); //Authentication
 //app.use('/api/users', usersRoute); //User management
 //app.use('/api/rooms', roomsRoute); //Room management

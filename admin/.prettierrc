@@ -1,0 +1,1 @@
+echo '{ "singleQuote": true, "trailingComma": "es5" }' > .prettierrc
