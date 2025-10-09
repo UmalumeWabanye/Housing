@@ -1,0 +1,115 @@
+/* Full page background */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Login form container */
+.login-form {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.3s ease;
+}
+
+.login-form:hover {
+  transform: translateY(-5px);
+}
+
+/* Heading */
+.login-form h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333333;
+}
+
+/* Input fields */
+.login-form input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Ensure proper width */
+}
+
+.login-form input:focus {
+  border-color: #667eea;
+}
+
+/* Password wrapper for icon */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding: 0.85rem 2.75rem 0.85rem 1rem; /* extra right padding for icon */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.password-wrapper input:focus {
+  border-color: #667eea;
+}
+
+.password-wrapper span {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #888888;
+  font-size: 1.2rem;
+  height: 100%;
+}
+
+/* Submit button */
+.login-form button {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: #667eea;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #5a67d8;
+}
+
+/* Error message */
+.login-form .error {
+  color: #e53e3e;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Responsive tweaks */
+@media (max-width: 500px) {
+  .login-form {
+    padding: 2rem 1.5rem;
+  }
+}
